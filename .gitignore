@@ -21,7 +21,7 @@ proguard-project.txt
 #
 ant.properties
 build.xml
-
+libs/*
 ########## Intellij #########
 
 *.iml
