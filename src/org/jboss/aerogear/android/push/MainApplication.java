@@ -1,4 +1,4 @@
-package com.example.pusheedemo;
+package org.jboss.aerogear.android.push;
 
 import java.net.MalformedURLException;
 import java.net.URL;
