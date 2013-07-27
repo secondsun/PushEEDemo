@@ -3,8 +3,6 @@ package org.jboss.aerogear.android.push;
 import org.jboss.aerogear.android.unifiedpush.MessageHandler;
 import org.jboss.aerogear.android.unifiedpush.Registrar;
 
-import com.example.pusheedemo.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;

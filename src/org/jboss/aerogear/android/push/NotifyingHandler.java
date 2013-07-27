@@ -1,10 +1,6 @@
 package org.jboss.aerogear.android.push;
 
-import org.jboss.aerogear.android.unifiedpush.AGPushMessageReceiver;
 import org.jboss.aerogear.android.unifiedpush.MessageHandler;
-import org.jboss.aerogear.android.unifiedpush.Registrar;
-
-import com.example.pusheedemo.R;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
