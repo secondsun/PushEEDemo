@@ -16,16 +16,21 @@ public class MainApplication extends Application {
 	
 	private Registrar registrar;
 	
+	private static final String VARIANT_ID = "c54d6bcd-b669-4626-b456-cbf375b86052";
+	private static final String SECRET = "0fceb381-dd25-45b9-9de2-7ee2ffd895ca";
+	private static final String GCM_SENDER_ID = "272275396485";
+	private static final String UNIFIED_PUSH_URL = "http://192.168.1.194:8080/ag-push/rest/registry/device";
+	private static final String MY_ALIAS = "john";
+	
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		try {
-			final Registrar r = new Registrar(new URL("http://192.168.1.194:8080/ag-push/rest/registry/device"));
-			PushConfig config = new PushConfig("272275396485");
-			config.setVariantID("c54d6bcd-b669-4626-b456-cbf375b86052");
-			config.setDeviceType("ANDROID");
-			config.setSecret("0fceb381-dd25-45b9-9de2-7ee2ffd895ca");
-			config.setAlias("john");
+			final Registrar r = new Registrar(new URL(UNIFIED_PUSH_URL));
+			PushConfig config = new PushConfig(GCM_SENDER_ID);
+			config.setVariantID(VARIANT_ID);
+			config.setSecret(SECRET);
+			config.setAlias(MY_ALIAS);
 			
 			r.register(getApplicationContext(), config, new Callback<Void>() {
 				
