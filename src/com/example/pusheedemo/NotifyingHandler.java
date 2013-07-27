@@ -19,9 +19,7 @@ public class NotifyingHandler implements MessageHandler {
     NotificationCompat.Builder builder;
     Context ctx;
     
-    public static final NotifyingHandler instance = new NotifyingHandler();
-    
-    private NotifyingHandler(){}
+    public NotifyingHandler(){}
     
     
     @Override

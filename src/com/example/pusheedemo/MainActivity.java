@@ -23,7 +23,6 @@ public class MainActivity extends Activity implements MessageHandler{
 	@Override
 	protected void onResume() {
 		super.onResume();
-		Registrar.unregisterBackgroundThreadHandler(NotifyingHandler.instance);
 		Registrar.registerMainThreadHandler(this);
 	}
 	
@@ -31,7 +30,6 @@ public class MainActivity extends Activity implements MessageHandler{
 	protected void onPause() {
 		super.onPause();
 		Registrar.unregisterMainThreadHandler(this);
-		Registrar.registerBackgroundThreadHandler(NotifyingHandler.instance);
 	}
 
 	@Override

@@ -32,7 +32,7 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <category android:name="com.example.pusheedemo" />
             </intent-filter>
-            
+            <meta-data android:name="DEFAULT_MESSAGE_HANDLER_KEY" android:value="com.example.pusheedemo.NotifyingHandler"/>
         </receiver> 
 	
         <activity

@@ -22,8 +22,10 @@ public class MainApplication extends Application {
 		try {
 			final Registrar r = new Registrar(new URL("http://192.168.1.194:8080/ag-push/rest/registry/device"));
 			PushConfig config = new PushConfig("272275396485");
-			config.setMobileVariantId("c60807e6-ffc9-4833-bb02-8ead99e6c62b");
-			config.setAlias("someGuy");
+			config.setVariantID("c54d6bcd-b669-4626-b456-cbf375b86052");
+			config.setDeviceType("ANDROID");
+			config.setSecret("0fceb381-dd25-45b9-9de2-7ee2ffd895ca");
+			config.setAlias("john");
 			
 			r.register(getApplicationContext(), config, new Callback<Void>() {
 				
