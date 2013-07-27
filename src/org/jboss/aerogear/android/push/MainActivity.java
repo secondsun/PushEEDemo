@@ -33,14 +33,12 @@ public class MainActivity extends Activity implements MessageHandler{
 
 	@Override
 	public void onDeleteMessage(Context context, Bundle arg0) {
-		// TODO Auto-generated method stub
-		
+		/*see:https://developer.android.com/reference/com/google/android/gms/gcm/GoogleCloudMessaging.html#MESSAGE_TYPE_DELETED*/
 	}
 
 	@Override
 	public void onError() {
-		// TODO Auto-generated method stub
-		
+		/*see: https://developer.android.com/reference/com/google/android/gms/gcm/GoogleCloudMessaging.html#MESSAGE_TYPE_SEND_ERROR*/		
 	}
 
 	@Override
