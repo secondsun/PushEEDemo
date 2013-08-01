@@ -32,10 +32,10 @@ public class MainApplication extends Application {
 	
 	private Registrar registrar;
 	
-	private static final String VARIANT_ID = "c54d6bcd-b669-4626-b456-cbf375b86052";
-	private static final String SECRET = "0fceb381-dd25-45b9-9de2-7ee2ffd895ca";
+	private static final String VARIANT_ID = "791f78e9-1af6-45ab-8182-c9f4640d4c6b";
+	private static final String SECRET = "f53c1c7e-6eeb-4f55-a93d-07b614313e83";
 	private static final String GCM_SENDER_ID = "272275396485";
-	private static final String UNIFIED_PUSH_URL = "http://192.168.1.194:8080/ag-push/rest/registry/device";
+	private static final String UNIFIED_PUSH_URL = "http://10.0.2.2:8080/ag-push/rest/registry/device";
 	private static final String MY_ALIAS = "john";
 	
 	@Override
