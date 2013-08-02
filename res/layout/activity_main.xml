@@ -14,4 +14,13 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
+    <Button
+        android:id="@+id/reg_toggle"
+        android:layout_below="@id/hodor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register for Push" />
+
+    
+    
 </RelativeLayout>

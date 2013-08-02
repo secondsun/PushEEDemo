@@ -22,6 +22,8 @@ import org.jboss.aerogear.android.unifiedpush.Registrar;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements MessageHandler{
@@ -33,6 +35,9 @@ public class MainActivity extends Activity implements MessageHandler{
 		if (getIntent() != null && getIntent().hasExtra("alert")) {
 			onMessage(this, getIntent().getExtras());
 		}
+                
+                ((Button)findViewById(R.id.reg_toggle)).setOnClickListener(registerAction);
+                
 	}
 	
 	@Override
@@ -64,6 +69,24 @@ public class MainActivity extends Activity implements MessageHandler{
 		text.invalidate();
 	}
 
+        private View.OnClickListener registerAction = new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                ((MainApplication)getApplication()).register();
+                ((Button)findViewById(R.id.reg_toggle)).setText("Unregister push");
+                ((Button)findViewById(R.id.reg_toggle)).setOnClickListener(unregisterAction);
+            }
+        };
 	
-	
+        private View.OnClickListener unregisterAction = new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                ((MainApplication)getApplication()).unregister();
+                ((Button)findViewById(R.id.reg_toggle)).setText("Register push");
+                ((Button)findViewById(R.id.reg_toggle)).setOnClickListener(registerAction);
+            }
+        };
+        
 }
