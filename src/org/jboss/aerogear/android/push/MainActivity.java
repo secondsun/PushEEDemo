@@ -17,7 +17,7 @@
 package org.jboss.aerogear.android.push;
 
 import org.jboss.aerogear.android.unifiedpush.MessageHandler;
-import org.jboss.aerogear.android.unifiedpush.Registrar;
+import org.jboss.aerogear.android.impl.unifiedpush.AeroGearGCMPushRegistrar;
 
 import android.app.Activity;
 import android.content.Context;
@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import org.jboss.aerogear.android.unifiedpush.Registrations;
 
 public class MainActivity extends Activity implements MessageHandler{
 
@@ -43,13 +44,13 @@ public class MainActivity extends Activity implements MessageHandler{
 	@Override
 	protected void onResume() {
 		super.onResume();
-		Registrar.registerMainThreadHandler(this);
+                Registrations.registerMainThreadHandler(this);
 	}
 	
 	@Override
 	protected void onPause() {
 		super.onPause();
-		Registrar.unregisterMainThreadHandler(this);
+		Registrations.unregisterMainThreadHandler(this);
 	}
 
 	@Override

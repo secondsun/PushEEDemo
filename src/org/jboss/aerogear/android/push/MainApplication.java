@@ -21,7 +21,7 @@ import java.net.URL;
 
 import org.jboss.aerogear.android.Callback;
 import org.jboss.aerogear.android.unifiedpush.PushConfig;
-import org.jboss.aerogear.android.unifiedpush.Registrar;
+import org.jboss.aerogear.android.impl.unifiedpush.AeroGearGCMPushRegistrar;
 
 import android.app.Application;
 import android.util.Log;
@@ -30,10 +30,10 @@ import android.widget.Toast;
 public class MainApplication extends Application {
 
     private static final String TAG = MainApplication.class.getSimpleName();
-    private Registrar registrar;
+    private AeroGearGCMPushRegistrar registrar;
     private PushConfig config;
-    private static final String VARIANT_ID = "791f78e9-1af6-45ab-8182-c9f4640d4c6b";
-    private static final String SECRET = "f53c1c7e-6eeb-4f55-a93d-07b614313e83";
+    private static final String VARIANT_ID = "c4c1a7e5-3baa-445d-b1fc-f8fa503c1721";
+    private static final String SECRET = "3986daa7-427e-4d8d-ba4c-04046fbd44fc";
     private static final String GCM_SENDER_ID = "272275396485";
     private static final String UNIFIED_PUSH_URL = "http://10.0.2.2:8080/ag-push/rest/registry/device";
     private static final String MY_ALIAS = "john";
@@ -42,7 +42,7 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
         try {
-            registrar = new Registrar(new URL(UNIFIED_PUSH_URL));
+            registrar = new AeroGearGCMPushRegistrar(new URL(UNIFIED_PUSH_URL));
             config = new PushConfig(GCM_SENDER_ID);
             config.setVariantID(VARIANT_ID);
             config.setSecret(SECRET);
@@ -54,7 +54,7 @@ public class MainApplication extends Application {
         }
     }
 
-    public Registrar getRegistrar() {
+    public AeroGearGCMPushRegistrar getRegistrar() {
         return registrar;
     }
 
