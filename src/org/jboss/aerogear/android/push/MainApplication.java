@@ -41,7 +41,7 @@ public class MainApplication extends Application {
         super.onCreate();
         try {
             
-            config = new PushConfig(new URI("tcp://test.mosquitto.org:1883"), "error", "bbc");
+            config = new PushConfig(new URI("tcp://test.mosquitto.org:1883"), "error#", "bbc/#");
             config.setType(PushTypes.MQTT);
             registrar = registrations.push("mqtt", config);
             
