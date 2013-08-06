@@ -17,14 +17,15 @@
 package org.jboss.aerogear.android.push;
 
 import org.jboss.aerogear.android.unifiedpush.MessageHandler;
-import org.jboss.aerogear.android.impl.unifiedpush.AeroGearGCMPushRegistrar;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import org.jboss.aerogear.android.unifiedpush.MQTTMessageReceiver;
 import org.jboss.aerogear.android.unifiedpush.Registrations;
 
 public class MainActivity extends Activity implements MessageHandler{
@@ -38,7 +39,8 @@ public class MainActivity extends Activity implements MessageHandler{
 		}
                 
                 ((Button)findViewById(R.id.reg_toggle)).setOnClickListener(registerAction);
-                
+                TextView text = (TextView) findViewById(R.id.hodor);
+                text.setMovementMethod(new ScrollingMovementMethod());
 	}
 	
 	@Override
@@ -64,9 +66,9 @@ public class MainActivity extends Activity implements MessageHandler{
 	}
 
 	@Override
-	public void onMessage(Context context, Bundle arg0) {
+	public void onMessage(Context context, Bundle message) {
 		TextView text = (TextView) findViewById(R.id.hodor);
-		text.setText(arg0.getString("alert"));
+		text.append(message.getString(MQTTMessageReceiver.TOPIC) + ":" + message.getString(MQTTMessageReceiver.PAYLOAD) + "\n");
 		text.invalidate();
 	}
 
@@ -87,6 +89,8 @@ public class MainActivity extends Activity implements MessageHandler{
                 ((MainApplication)getApplication()).unregister();
                 ((Button)findViewById(R.id.reg_toggle)).setText("Register push");
                 ((Button)findViewById(R.id.reg_toggle)).setOnClickListener(registerAction);
+                TextView text = (TextView) findViewById(R.id.hodor);
+                text.setText("Hello World!");
             }
         };
         

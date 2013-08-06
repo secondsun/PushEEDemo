@@ -8,18 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/hodor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
     <Button
         android:id="@+id/reg_toggle"
-        android:layout_below="@id/hodor"
+        
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register for Push" />
+    
+    <TextView
+        android:id="@+id/hodor"
+        android:maxLines = "30"
+        android:scrollbars = "vertical"
+        android:layout_below="@id/reg_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_world" />
+
+    
 
     
     
